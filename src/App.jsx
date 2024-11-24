@@ -5,7 +5,7 @@ import Gallery from './Gallery'; // Importing the Gallery components
 const App = () => {
   return (
     <div>
-      <h1>Tour Comparison App</h1>
+     <h1><p>Tour Comparison App</p></h1>
        {/*Rendering Gallery Component*/}
       <Gallery />
     </div>

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function Gallery() {
-    
+
     //Managing Fetched Data
     const [tours, setTours] = useState([]);  
     const [loading, setLoading] = useState(true);  
@@ -52,7 +52,7 @@ function Gallery() {
 
     // Error message 
     if (error) {
-        return <div>{error}</div>;
+        return <div>{`Error: ${error}`}</div>;
     }
 
     return (
@@ -61,26 +61,19 @@ function Gallery() {
             <ul>
                 {tours.map(tour => (
                     <li key={tour.id}>
+                        
                         <img src={tour.image}/>
 
-                        <p>
-                            {tour.showMore ? tour.info : `${tour.name}...`} {/* Description */}
-                        </p>
+                    <p>{tour.showMore ? tour.info : `${tour.name}...`}</p>
 
                         <button onClick={() => toggleButton(tour.id)}>
-                            {tour.showMore ? 'Show Less' : 'Show More'} {/* Ternary operation to toggle button*/}
-                        </button>
+                            {tour.showMore ? 'Show Less' : 'Show More'} {/* Ternary operation to toggle button*/}</button>
 
                         <p>${tour.price}</p>
 
                         {/* Remove Button */}
-                        <button
-                            onClick={() => removeButton(tour.id)}
-                        >
-                            Not Interested
-
-                        </button>
-                    </li>
+                        <button onClick={() => removeButton(tour.id)} > Not Interested </button>
+                      </li>
                 ))}
             </ul>
         </div>
