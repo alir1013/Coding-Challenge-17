@@ -1,33 +1,15 @@
 //Requirment 1: Root Component
+import React from 'react';
+import Gallery from './Gallery'; // Importing the Gallery components
 
-import { useState } from 'react'
-import Gallery from './Gallery.jsx'; //Importing Gallery Component
-import './App.css'
-
-function App() {
-  const [app, setApp] = useState({});   
-
+const App = () => {
   return (
-
- 
-
     <div>
+      <h1>Tour Comparison App</h1>
+       {/*Rendering Gallery Component*/}
+      <Gallery />
+    </div>
+  );
+};
 
-    <header>
-
-        <h1>Tour Comparison App</h1>
-
-    </header>
-
-    <main>
-
-   {/*Rendering Gallery Component*/}
-        <Gallery/>
-
-    </main>
-
-</div>
-);
-}
-
-export default App
+export default App;
